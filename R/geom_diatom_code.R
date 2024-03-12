@@ -2,15 +2,15 @@
 #'
 #' @description This geom is used to plot Brazilian soccer team badges instead
 #'   of points in a ggplot. It requires x, y aesthetics as well as a valid Brazilian soccer
-#'   team abbreviation. The latter can be checked with [`valid_team_names()`].
+#'   team abbreviation. The latter can be checked with [`valid_diatom_code()`].
 #'
 #' @inheritParams ggplot2::geom_point
 #' @section Aesthetics:
-#' `geom_futebol_badges()` understands the following aesthetics (required aesthetics are in bold):
+#' `geom_diatom_code()` understands the following aesthetics (required aesthetics are in bold):
 #' \itemize{
 #'   \item{**x**}{ - The x-coordinate.}
 #'   \item{**y**}{ - The y-coordinate.}
-#'   \item{**team_abbr**}{ - The team abbreviation. Should be one of [`valid_team_names()`]. The function tries to clean team names internally by calling [`futebolplotR::clean_team_abbrs()`].}
+#'   \item{**diatom_code**}{ - The team abbreviation. Should be one of [`valid_diatom_code()`]. The function tries to clean team names internally by calling [`DiatoViz::clean_diatom_code()`].}
 #'   \item{`alpha = NULL`}{ - The alpha channel, i.e. transparency level, as a numerical value between 0 and 1.}
 #'   \item{`colour = NULL`}{ - The image will be colorized with this colour. Use the special character `"b/w"` to set it to black and white. For more information on valid colour names in ggplot2 see <https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill>}
 #'   \item{`angle = 0`}{ - The angle of the image as a numerical value between 0° and 360°.}
@@ -31,58 +31,8 @@
 #' @return A ggplot2 layer ([ggplot2::layer()]) that can be added to a plot
 #'   created with [ggplot2::ggplot()].
 #' @export
-#' @examples
-#' \donttest{
-#' library(futebolplotR)
-#' library(ggplot2)
 #'
-#' team_abbr <- futebolplotR::valid_team_names()
-#'
-#' df <- data.frame(
-#'   a = rep(1:5, 2),
-#'   b = sort(rep(1:2, 5), decreasing = TRUE),
-#'   teams = team_abbr[1:10]
-#' )
-#'
-#' # keep alpha == 1 for all teams including an "A"
-#' matches <- grepl("A", team_abbr[1:10])
-#' df$alpha <- ifelse(matches, 1, 0.2)
-#' # also set a custom fill colour for the non "A" teams
-#' df$colour <- ifelse(matches, NA, "gray")
-#'
-#' # scatterplot of all badges
-#' ggplot(df, aes(x = a, y = b)) +
-#'   geom_futebol_badges(aes(team_abbr = teams), width = 0.075) +
-#'   geom_label(aes(label = teams), nudge_y = -0.35, alpha = 0.5) +
-#'   theme_void()
-#'
-#' # apply alpha via an aesthetic from inside the dataset `df`
-#' # please note that you have to add scale_alpha_identity() to use the alpha
-#' # values in your dataset!
-#' ggplot(df, aes(x = a, y = b)) +
-#'   geom_futebol_badges(aes(team_abbr = teams, alpha = alpha), width = 0.075) +
-#'   geom_label(aes(label = teams), nudge_y = -0.35, alpha = 0.5) +
-#'   scale_alpha_identity() +
-#'   theme_void()
-#'
-#' # apply alpha and colour via an aesthetic from inside the dataset `df`
-#' # please note that you have to add scale_alpha_identity() as well as
-#' # scale_color_identity() to use the alpha and colour values in your dataset!
-#' ggplot(df, aes(x = a, y = b)) +
-#'   geom_futebol_badges(aes(team_abbr = teams, alpha = alpha, colour = colour), width = 0.075) +
-#'   geom_label(aes(label = teams), nudge_y = -0.35, alpha = 0.5) +
-#'   scale_alpha_identity() +
-#'   scale_color_identity() +
-#'   theme_void()
-#'
-#' # apply alpha as constant for all badges
-#' ggplot(df, aes(x = a, y = b)) +
-#'   geom_futebol_badges(aes(team_abbr = teams), width = 0.075, alpha = 0.6) +
-#'   geom_label(aes(label = teams), nudge_y = -0.35, alpha = 0.5) +
-#'   theme_void()
-#'
-#' }
-geom_diatom_shape <- function(mapping = NULL, data = NULL,
+geom_diatom_code <- function(mapping = NULL, data = NULL,
                            stat = "identity", position = "identity",
                            ...,
                            na.rm = FALSE,
@@ -99,12 +49,13 @@ geom_diatom_shape <- function(mapping = NULL, data = NULL,
     inherit.aes = inherit.aes,
     params = list(
       na.rm = na.rm,
+      type = "code",
       ...
     )
   )
 }
 
-#' @rdname futebolplotR-package
+#' @rdname DiatoViz-package
 #' @export
 GeomDIATOM <- ggplot2::ggproto(
   "GeomDIATOM", ggplot2::Geom,
@@ -114,11 +65,13 @@ GeomDIATOM <- ggplot2::ggproto(
     alpha = NULL, colour = NULL, angle = 0, hjust = 0.5,
     vjust = 0.5, width = 1.0, height = 1.0
   ),
-  draw_panel = function(data, panel_params, coord, na.rm = FALSE) {
+  draw_panel = function(data, panel_params, coord, na.rm = FALSE, type = c("code", "species")) {
 
-    diatom_code <- clean_diatom_code(as.character(data$diatom_code), keep_non_matches = FALSE)
+    type <- match.arg(type)
 
-    data$path <- shape_from_code(diatom_code)
+    diatom_code <- clean_diatom_code(as.character(data$diatom_code), type = type, keep_non_matches = FALSE)
+
+    data$path <- shape_from_diatom(diatom_code, type = type)
 
     ggpath::GeomFromPath$draw_panel(
       data = data,
@@ -129,3 +82,6 @@ GeomDIATOM <- ggplot2::ggproto(
   },
   draw_key = function(...) grid::nullGrob()
 )
+
+
+
