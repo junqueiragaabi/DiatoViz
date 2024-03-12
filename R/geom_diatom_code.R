@@ -69,9 +69,9 @@ GeomDIATOM <- ggplot2::ggproto(
 
     type <- match.arg(type)
 
-    diatom_code <- clean_diatom_code(as.character(data$diatom_code), type = type, keep_non_matches = FALSE)
+    diatom_code <- DiatoViz::clean_diatom_code(as.character(data$diatom_code), type = type, keep_non_matches = FALSE)
 
-    data$path <- shape_from_diatom(diatom_code, type = type)
+    data$path <- DiatoViz::shape_from_diatom(diatom_code, type = type)
 
     ggpath::GeomFromPath$draw_panel(
       data = data,
@@ -82,6 +82,3 @@ GeomDIATOM <- ggplot2::ggproto(
   },
   draw_key = function(...) grid::nullGrob()
 )
-
-
-
