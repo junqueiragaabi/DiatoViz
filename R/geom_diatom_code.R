@@ -49,7 +49,6 @@ geom_diatom_code <- function(mapping = NULL, data = NULL,
     inherit.aes = inherit.aes,
     params = list(
       na.rm = na.rm,
-      type = "code",
       ...
     )
   )
@@ -57,6 +56,7 @@ geom_diatom_code <- function(mapping = NULL, data = NULL,
 
 #' @rdname DiatoViz-package
 #' @export
+#
 GeomDIATOM <- ggplot2::ggproto(
   "GeomDIATOM", ggplot2::Geom,
   required_aes = c("x", "y", "diatom_code"),
@@ -65,13 +65,11 @@ GeomDIATOM <- ggplot2::ggproto(
     alpha = NULL, colour = NULL, angle = 0, hjust = 0.5,
     vjust = 0.5, width = 1.0, height = 1.0
   ),
-  draw_panel = function(data, panel_params, coord, na.rm = FALSE, type = c("code", "species")) {
+  draw_panel = function(data, panel_params, coord, na.rm = FALSE) {
 
-    type <- match.arg(type)
+    diatom_code <- clean_diatom_code(as.character(data$diatom_code), keep_non_matches = FALSE)
 
-    diatom_code <- DiatoViz::clean_diatom_code(as.character(data$diatom_code), type = type, keep_non_matches = FALSE)
-
-    data$path <- DiatoViz::shape_from_diatom(diatom_code, type = type)
+    data$path <- shape_from_diatom(diatom_code)
 
     ggpath::GeomFromPath$draw_panel(
       data = data,
