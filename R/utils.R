@@ -3,12 +3,6 @@
 #'
 #' @export
 #' @return A vector of type `"character"`.
-#' @examples
-#' # List valid Brazilian soccer team abbreviations
-#' valid_diatom_code("code")
-#'
-#' #' # List valid Brazilian soccer team abbreviations
-#' valid_diatom_code("species")
 
 valid_diatom_code <- function(){
   map <- DiatoViz::diatom_code_abbr_mapping
@@ -54,7 +48,6 @@ clean_diatom_code <- function(abbr,
 
 
 # internal helper that outputs local path to badge files
-#' @export
 shape_from_diatom <- function(abbr){
 
    system.file(paste0("/", abbr, ".png"), package = "DiatoViz")

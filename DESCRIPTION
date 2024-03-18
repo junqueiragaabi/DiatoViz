@@ -3,7 +3,7 @@ Title: DiatoViz provides templates for plotting in R
 Version: 0.0.0.9000
 Authors@R:
     person("Gabriela", "Junqueira", , "mgjn.junqueira@gmail.com", role = c("aut", "cre"))
-Description: DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use can be made either by the scientific name or by the OMNIDIA code
+Description: DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use can be made either by the scientific name or by the OMNIDIA code.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -14,9 +14,10 @@ Imports:
     cli (>= 3.0.0),
     ggpath (>= 1.0.0),
     ggplot2 (>= 3.3.0),
+    glue,
     grid,
-    rlang (>= 0.4.11),
-    scales (>= 1.1.0)
+    lifecycle,
+    rlang (>= 0.4.11)
 Suggests:
     testthat (>= 3.0.0),
     vdiffr
