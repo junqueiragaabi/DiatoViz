@@ -13,14 +13,15 @@ knitr::opts_chunk$set(
 )
 ```
 
-# DiatoViz
+# DiatoViz <img src="man/figures/logo.png" align="right" width="25%" min-width="120px" />
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 `DiatoViz` is an R package developed for diatomists.
 
-The `DiatoViz` package provides a simple function to add silhouettes of diatoms to plots generated `ggplot2`. Currently, the package contains 87 diatom silhouettes. The silhouettes of diatoms were created using the [**SHERPA**](https://www.uni-due.de/phykologie/sherpa) software (Kloster et al. 2014).
+The `DiatoViz` package provides a simple function to add silhouettes of diatoms to plots generated `ggplot2`. Currently, the package contains 87 diatom silhouettes.
+The silhouettes of diatoms were created using the [**SHERPA**](https://www.uni-due.de/phykologie/sherpa) software (Kloster et al. 2014).
 
 ## Installation
 
@@ -33,7 +34,7 @@ devtools::install_github("junqueiragaabi/DiatoViz")
 
 ## How does it work?
 
-To use Diatoviz, your species list must be formatted with the specific abbreviations provided by the [**Omnidia**](https://omnidia.fr/en/) software. The main function `geom_diatom_code()` geometry draws diatom species shapes. Here you can see some the current available diatoms to plot. Atualmente o pacote tem 87 siluetas de diatomaceas.
+To use Diatoviz, your species list must be formatted with the specific abbreviations provided by the [**Omnidia**](https://omnidia.fr/en/) software. The main function `geom_diatom_code()` geometry draws diatom species shapes. Here you can see some the current available diatoms to plot.
 
 ```{r, plot, fig.width = 5, fig.height = 10, dpi=300, message=FALSE, warning=FALSE}
 library(tidyverse)

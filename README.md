@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# DiatoViz
+# DiatoViz <img src="man/figures/logo.png" align="right" width="25%" min-width="120px" />
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -31,7 +31,7 @@ To use Diatoviz, your species list must be formatted with the specific
 abbreviations provided by the [**Omnidia**](https://omnidia.fr/en/)
 software. The main function `geom_diatom_code()` geometry draws diatom
 species shapes. Here you can see some the current available diatoms to
-plot. Atualmente o pacote tem 87 siluetas de diatomaceas.
+plot.
 
 ``` r
 library(tidyverse)
