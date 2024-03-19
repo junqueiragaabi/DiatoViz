@@ -1,8 +1,10 @@
 Package: DiatoViz
 Title: DiatoViz provides templates for plotting in R
 Version: 0.0.0.9000
-Authors@R:
-    person("Gabriela", "Junqueira", , "mgjn.junqueira@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Gabriela", "Junqueira", , "mgjn.junqueira@gmail.com", role = c("cre", "aut")),
+    person("Bruno", "Mioto", , "brunomioto97@gmail.com", role = "aut")
+    )
 Description: DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use can be made either by the scientific name or by the OMNIDIA code.
 License: MIT + file LICENSE
 Encoding: UTF-8

@@ -17,6 +17,11 @@ DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use c
 \author{
 \strong{Maintainer}: Gabriela Junqueira \email{mgjn.junqueira@gmail.com}
 
+Authors:
+\itemize{
+  \item Bruno Mioto \email{brunomioto97@gmail.com}
+}
+
 }
 \keyword{datasets}
 \keyword{internal}
