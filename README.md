@@ -9,7 +9,7 @@
 `DiatoViz` is an R package developed for diatomists.
 
 The `DiatoViz` package provides a simple function to add silhouettes of
-diatoms to plots generated `ggplot2`. Currently, the package contains 87
+diatoms to plots generated `ggplot2`. Currently, the package contains 89
 diatom silhouettes. The silhouettes of diatoms were created using the
 [**SHERPA**](https://www.uni-due.de/phykologie/sherpa) software (Kloster
 et al. 2014).
