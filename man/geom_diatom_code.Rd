@@ -2,7 +2,7 @@
 % Please edit documentation in R/geom_diatom_code.R
 \name{geom_diatom_code}
 \alias{geom_diatom_code}
-\title{ggplot2 Layer for Visualizing Brazilian Soccer Team badges}
+\title{ggplot2 Layer for visualizing the silhouettes of diatoms.}
 \usage{
 geom_diatom_code(
   mapping = NULL,
@@ -69,9 +69,8 @@ A ggplot2 layer (\code{\link[ggplot2:layer]{ggplot2::layer()}}) that can be adde
 created with \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}.
 }
 \description{
-This geom is used to plot Brazilian soccer team badges instead
-of points in a ggplot. It requires x, y aesthetics as well as a valid Brazilian soccer
-team abbreviation. The latter can be checked with \code{\link[=valid_diatom_code]{valid_diatom_code()}}.
+This geom is used to plot silhouettes of diatoms instead
+of points in a ggplot. It requires x, y aesthetics as well as a valid diatoms code. The latter can be checked with \code{\link[=valid_diatom_code]{valid_diatom_code()}}.
 }
 \section{Aesthetics}{
 
@@ -79,7 +78,7 @@ team abbreviation. The latter can be checked with \code{\link[=valid_diatom_code
 \itemize{
 \item{\strong{x}}{ - The x-coordinate.}
 \item{\strong{y}}{ - The y-coordinate.}
-\item{\strong{diatom_code}}{ - The team abbreviation. Should be one of \code{\link[=valid_diatom_code]{valid_diatom_code()}}. The function tries to clean team names internally by calling \code{\link[=clean_diatom_code]{clean_diatom_code()}}.}
+\item{\strong{diatom_code}}{ - The diatoms codes. Should be one of \code{\link[=valid_diatom_code]{valid_diatom_code()}}. The function tries to clean diatom codes internally by calling \code{\link[=clean_diatom_code]{clean_diatom_code()}}.}
 \item{\code{alpha = NULL}}{ - The alpha channel, i.e. transparency level, as a numerical value between 0 and 1.}
 \item{\code{colour = NULL}}{ - The image will be colorized with this colour. Use the special character \code{"b/w"} to set it to black and white. For more information on valid colour names in ggplot2 see \url{https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill}}
 \item{\code{angle = 0}}{ - The angle of the image as a numerical value between 0° and 360°.}

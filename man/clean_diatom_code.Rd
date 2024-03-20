@@ -2,22 +2,22 @@
 % Please edit documentation in R/utils.R
 \name{clean_diatom_code}
 \alias{clean_diatom_code}
-\title{Standardize Brazilian Soccer Team Abbreviations}
+\title{Standardize diatoms code}
 \usage{
-clean_diatom_code(abbr, keep_non_matches = TRUE)
+clean_diatom_code(code, keep_non_matches = TRUE)
 }
 \arguments{
-\item{abbr}{a character vector of abbreviations}
+\item{code}{a character vector of abbreviations}
 
-\item{keep_non_matches}{If \code{TRUE} (the default) an element of \code{abbr} that can't
+\item{keep_non_matches}{If \code{TRUE} (the default) an element of \code{code} that can't
 be matched to any of the internal mapping vectors will be kept as is. Otherwise
 it will be replaced with \code{NA}.}
 }
 \value{
-A character vector with the length of \code{abbr} and cleaned team abbreviations
-if they are included in \code{\link{diatom_code_abbr_mapping}} or \code{\link{diatom_sp_abbr_mapping}}.
+A character vector with the length of \code{code} and cleaned the diatoms code
+if they are included in \code{\link{diatom_code_abbr_mapping}}.
 Non matches may be replaced with \code{NA} (depending on the value of \code{keep_non_matches}).
 }
 \description{
-This function standardizes Brazilian Soccer team abbreviations to brasileirao defaults.
+This function standardizes diatoms code.
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{diatom_code_abbr_mapping}
 \alias{diatom_code_abbr_mapping}
-\title{Alternate NBA Team Abbreviation Mapping}
+\title{Alternate diatom code mapping}
 \format{
 A named character vector
 \describe{
@@ -15,11 +15,11 @@ A named character vector
 diatom_code_abbr_mapping
 }
 \description{
-A named character vector mapping common alternate team abbreviations.
+A named character vector mapping common alternate diatoms codes.
 }
 \examples{
 \donttest{
-diatom_code_abbr_mapping[c("BRK", "GSW", "PHO")]
+diatom_code_abbr_mapping[c("CPLA", "ALTG", "CAFF")]
 }
 
 }

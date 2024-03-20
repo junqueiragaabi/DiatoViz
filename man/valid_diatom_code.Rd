@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{valid_diatom_code}
 \alias{valid_diatom_code}
-\title{Output Valid Brazilian Soccer Team Abbreviations}
+\title{Output diatoms codes}
 \usage{
 valid_diatom_code()
 }
@@ -10,5 +10,5 @@ valid_diatom_code()
 A vector of type \code{"character"}.
 }
 \description{
-Output Valid Brazilian Soccer Team Abbreviations
+The abbreviations used in this function are the same as those used by the omnidia software
 }

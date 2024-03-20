@@ -1,3 +1,5 @@
+## code to prepare `build_internal_data` dataset goes here
+
 #DIATOM ------------------------------------------------------------------
 
 # data(diatom_species)
@@ -11,7 +13,8 @@
 #    dplyr::arrange(code) %>%
 #    tibble::deframe()
 #
-# diatom_code_abbr_mapping
+# Write Data --------------------------------------------------------------
+
 # usethis::use_data(diatom_code_abbr_mapping, overwrite = TRUE)
 
 

@@ -1,8 +1,7 @@
-#' ggplot2 Layer for Visualizing Brazilian Soccer Team badges
+#' ggplot2 Layer for visualizing the silhouettes of diatoms.
 #'
-#' @description This geom is used to plot Brazilian soccer team badges instead
-#'   of points in a ggplot. It requires x, y aesthetics as well as a valid Brazilian soccer
-#'   team abbreviation. The latter can be checked with [`valid_diatom_code()`].
+#' @description This geom is used to plot silhouettes of diatoms instead
+#'   of points in a ggplot. It requires x, y aesthetics as well as a valid diatoms code. The latter can be checked with [`valid_diatom_code()`].
 #'
 #' @inheritParams ggplot2::geom_point
 #' @section Aesthetics:
@@ -10,7 +9,7 @@
 #' \itemize{
 #'   \item{**x**}{ - The x-coordinate.}
 #'   \item{**y**}{ - The y-coordinate.}
-#'   \item{**diatom_code**}{ - The team abbreviation. Should be one of [`valid_diatom_code()`]. The function tries to clean team names internally by calling [`DiatoViz::clean_diatom_code()`].}
+#'   \item{**diatom_code**}{ - The diatoms codes. Should be one of [`valid_diatom_code()`]. The function tries to clean diatom codes internally by calling [`DiatoViz::clean_diatom_code()`].}
 #'   \item{`alpha = NULL`}{ - The alpha channel, i.e. transparency level, as a numerical value between 0 and 1.}
 #'   \item{`colour = NULL`}{ - The image will be colorized with this colour. Use the special character `"b/w"` to set it to black and white. For more information on valid colour names in ggplot2 see <https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill>}
 #'   \item{`angle = 0`}{ - The angle of the image as a numerical value between 0° and 360°.}
