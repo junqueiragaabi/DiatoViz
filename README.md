@@ -45,13 +45,13 @@ library(DiatoViz)
 diatoms <- DiatoViz::valid_diatom_code()
 
 df_example <- data.frame(
-  a = c(rep(1:5, 16),c(1,2,3,4,5, 6, 7, 8, 9)),
-  b = sort(c(rep(1:16, 5), c(0,0,0,0,0,0,0,0,0)), decreasing = TRUE),
+  a = c(rep(1:5, 17),c(1,2,3,4)),
+  b = sort(c(rep(1:17, 5), c(0,0,0,0)), decreasing = TRUE),
   species = diatoms) %>%
   slice(1:30)
 
 ggplot(df_example, aes(x = a, y = b)) +
-  geom_diatom_code(aes(diatom_code = species), width = 0.5) +
+  geom_diatom_code(aes(diatom_code = species), height = 0.1) +
   geom_label(aes(label = species), nudge_y = -0.45) +
   theme_void()+
   theme(plot.margin = margin(15,15,15,15,"pt"))+
