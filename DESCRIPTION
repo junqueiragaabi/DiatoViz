@@ -1,6 +1,6 @@
 Package: DiatoViz
 Title: DiatoViz provides templates for plotting in R
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: c(
     person("Gabriela", "Junqueira", , "mgjn.junqueira@gmail.com", role = c("cre", "aut")),
     person("Bruno", "Mioto", , "brunomioto97@gmail.com", role = "aut")
