@@ -63,7 +63,7 @@ GeomDIATOM <- ggplot2::ggproto(
   # non_missing_aes = c(""),
   default_aes = ggplot2::aes(
     alpha = NULL, colour = NULL, angle = 0, hjust = 0.5,
-    vjust = 0.5, width = 0.1, height = 0.1
+    vjust = 0.5, width = 1.0, height = 1.0
   ),
   draw_panel = function(data, panel_params, coord, na.rm = FALSE) {
 

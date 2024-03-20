@@ -27,7 +27,7 @@ valid_diatom_code <- function(){
 #'   Non matches may be replaced with `NA` (depending on the value of `keep_non_matches`).
 #' @export
 clean_diatom_code <- function(abbr,
-                             keep_non_matches = TRUE) {
+                              keep_non_matches = TRUE) {
   stopifnot(is.character(abbr))
 
   m <- DiatoViz::diatom_code_abbr_mapping
@@ -50,11 +50,20 @@ clean_diatom_code <- function(abbr,
 # internal helper that outputs local path to badge files
 shape_from_diatom <- function(abbr){
 
-   system.file(paste0("/", abbr, ".png"), package = "DiatoViz")
+  img_vctr <- paste0("inst/", abbr, ".png")
+  # This used to call the following system.file line
+  # but it drops non matches which results in errors
+  # system.file(img_vctr, package = "nbaplotR")
+
+  # Now we use some code from system.file but keep the non matches
+  packagePath <- find.package("DiatoViz", quiet = TRUE)
+  img_files <- file.path(packagePath, img_vctr)
+  present <- file.exists(img_files)
+  img_files[!present] <- img_vctr[!present]
+
+  img_files
 
 }
-
-
 
 
 

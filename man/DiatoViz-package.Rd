@@ -12,6 +12,8 @@ An object of class \code{GeomDIATOM} (inherits from \code{Geom}, \code{ggproto},
 GeomDIATOM
 }
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use can be made either by the scientific name or by the OMNIDIA code.
 }
 \author{

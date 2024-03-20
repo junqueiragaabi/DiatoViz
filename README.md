@@ -4,6 +4,11 @@
 # DiatoViz <img src="man/figures/logo.png" align="right" width="25%" min-width="120px" />
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/DiatoViz)](https://CRAN.R-project.org/package=DiatoViz)
 <!-- badges: end -->
 
 `DiatoViz` is an R package developed for diatomists.
@@ -18,11 +23,11 @@ et al. 2014).
 
 You can install the development version of `DiatoViz` from
 [GitHub](https://github.com/) with R package
-[**devtools**](https://cran.r-project.org/package=devtools):
+[**remotes**](https://cran.r-project.org/package=remotes):
 
 ``` r
-install.packages("devtools")
-devtools::install_github("junqueiragaabi/DiatoViz")
+#install.packages("remotes")
+remotes::install_github("junqueiragaabi/DiatoViz")
 ```
 
 ## How does it work?
@@ -36,8 +41,6 @@ plot.
 ``` r
 library(tidyverse)
 library(DiatoViz)
-
-## basic example code
 
 diatoms <- DiatoViz::valid_diatom_code()
 
