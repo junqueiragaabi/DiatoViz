@@ -137,23 +137,44 @@ created with <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html"
     <h2 id="aesthetics">Aesthetics<a class="anchor" aria-label="anchor" href="#aesthetics"></a></h2>
 
 
-<p><code>geom_diatom_code()</code> understands the following aesthetics (required aesthetics are in bold):</p><ul><li><p><strong>x</strong> - The x-coordinate.</p></li>
-<li><p><strong>y</strong> - The y-coordinate.</p></li>
-<li><p><strong>diatom_code</strong> - The diatoms codes. Should be one of <code><a href="valid_diatom_code.html">valid_diatom_code()</a></code>. The function tries to clean diatom codes internally by calling <code><a href="clean_diatom_code.html">clean_diatom_code()</a></code>.</p></li>
-<li><p><code>alpha = NULL</code> - The alpha channel, i.e. transparency level, as a numerical value between 0 and 1.</p></li>
-<li><p><code>colour = NULL</code> - The image will be colorized with this colour. Use the special character <code>"b/w"</code> to set it to black and white. For more information on valid colour names in ggplot2 see <a href="https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill" class="external-link">https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill</a></p></li>
-<li><p><code>angle = 0</code> - The angle of the image as a numerical value between 0° and 360°.</p></li>
-<li><p><code>hjust = 0.5</code> - The horizontal adjustment relative to the given x coordinate. Must be a numerical value between 0 and 1.</p></li>
-<li><p><code>vjust = 0.5</code> - The vertical adjustment relative to the given y coordinate. Must be a numerical value between 0 and 1.</p></li>
-<li><p><code>width = 1.0</code> - The desired width of the image in <code>npc</code> (Normalised Parent Coordinates).
+<p><code>geom_diatom_code()</code> understands the following aesthetics (required aesthetics are in bold):</p><dl><dt><strong>x</strong></dt>
+<dd><p>- The x-coordinate.</p></dd>
+
+<dt><strong>y</strong></dt>
+<dd><p>- The y-coordinate.</p></dd>
+
+<dt><strong>diatom_code</strong></dt>
+<dd><p>- The diatoms codes. Should be one of <code><a href="valid_diatom_code.html">valid_diatom_code()</a></code>. The function tries to clean diatom codes internally by calling <code><a href="clean_diatom_code.html">clean_diatom_code()</a></code>.</p></dd>
+
+<dt><code>alpha = NULL</code></dt>
+<dd><p>- The alpha channel, i.e. transparency level, as a numerical value between 0 and 1.</p></dd>
+
+<dt><code>colour = NULL</code></dt>
+<dd><p>- The image will be colorized with this colour. Use the special character <code>"b/w"</code> to set it to black and white. For more information on valid colour names in ggplot2 see <a href="https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill" class="external-link">https://ggplot2.tidyverse.org/articles/ggplot2-specs.html?q=colour#colour-and-fill</a></p></dd>
+
+<dt><code>angle = 0</code></dt>
+<dd><p>- The angle of the image as a numerical value between 0° and 360°.</p></dd>
+
+<dt><code>hjust = 0.5</code></dt>
+<dd><p>- The horizontal adjustment relative to the given x coordinate. Must be a numerical value between 0 and 1.</p></dd>
+
+<dt><code>vjust = 0.5</code></dt>
+<dd><p>- The vertical adjustment relative to the given y coordinate. Must be a numerical value between 0 and 1.</p></dd>
+
+<dt><code>width = 1.0</code></dt>
+<dd><p>- The desired width of the image in <code>npc</code> (Normalised Parent Coordinates).
 The default value is set to 1.0 which is <em>big</em> but it is necessary
 because all used values are computed relative to the default.
-A typical size is <code>width = 0.075</code> (see below examples).</p></li>
-<li><p><code>height = 1.0</code> - The desired height of the image in <code>npc</code> (Normalised Parent Coordinates).
+A typical size is <code>width = 0.075</code> (see below examples).</p></dd>
+
+<dt><code>height = 1.0</code></dt>
+<dd><p>- The desired height of the image in <code>npc</code> (Normalised Parent Coordinates).
 The default value is set to 1.0 which is <em>big</em> but it is necessary
 because all used values are computed relative to the default.
-A typical size is <code>height = 0.1</code> (see below examples).</p></li>
-</ul></div>
+A typical size is <code>height = 0.1</code> (see below examples).</p></dd>
+
+
+</dl></div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
