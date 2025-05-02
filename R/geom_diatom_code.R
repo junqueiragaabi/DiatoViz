@@ -66,16 +66,17 @@ GeomDIATOM <- ggplot2::ggproto(
   ),
   draw_panel = function(data, panel_params, coord, na.rm = FALSE) {
 
-    diatom_code <- clean_diatom_code(as.character(data$diatom_code), keep_non_matches = FALSE)
+    data <- coord$transform(data, panel_params)
 
-    data$path <- shape_from_diatom(diatom_code)
+    data$diatom_code <- clean_diatom_code(as.character(data$diatom_code), keep_non_matches = FALSE)
 
-    ggpath::GeomFromPath$draw_panel(
-      data = data,
-      panel_params = panel_params,
-      coord = coord,
-      na.rm = na.rm
-    )
+    grobs <- lapply(seq_along(data$diatom_code), ggpath::build_grobs, alpha = data$alpha, colour = data$colour, data = data)
+
+    class(grobs) <- "gList"
+
+    grid::gTree(children = grobs)
   },
   draw_key = function(...) grid::nullGrob()
 )
+
+
