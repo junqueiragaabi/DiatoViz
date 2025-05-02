@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.2
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-05-02T13:17Z
+last_built: 2025-05-02T16:14Z
 urls:
   reference: https://junqueiragaabi.github.io/DiatoViz/reference
   article: https://junqueiragaabi.github.io/DiatoViz/articles
