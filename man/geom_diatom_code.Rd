@@ -91,7 +91,7 @@ of points in a ggplot. It requires x, y aesthetics as well as a valid diatoms co
 \section{Aesthetics}{
 
 \code{geom_diatom_code()} understands the following aesthetics (required aesthetics are in bold):
-\itemize{
+\describe{
 \item{\strong{x}}{ - The x-coordinate.}
 \item{\strong{y}}{ - The y-coordinate.}
 \item{\strong{diatom_code}}{ - The diatoms codes. Should be one of \code{\link[=valid_diatom_code]{valid_diatom_code()}}. The function tries to clean diatom codes internally by calling \code{\link[=clean_diatom_code]{clean_diatom_code()}}.}

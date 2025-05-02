@@ -1,4 +1,4 @@
-#' ggplot2 Layer for visualizing the silhouettes of diatoms.
+#' @title ggplot2 Layer for visualizing the silhouettes of diatoms.
 #'
 #' @description This geom is used to plot silhouettes of diatoms instead
 #'   of points in a ggplot. It requires x, y aesthetics as well as a valid diatoms code. The latter can be checked with [`valid_diatom_code()`].
@@ -6,7 +6,7 @@
 #' @inheritParams ggplot2::geom_point
 #' @section Aesthetics:
 #' `geom_diatom_code()` understands the following aesthetics (required aesthetics are in bold):
-#' \itemize{
+#' \describe{
 #'   \item{**x**}{ - The x-coordinate.}
 #'   \item{**y**}{ - The y-coordinate.}
 #'   \item{**diatom_code**}{ - The diatoms codes. Should be one of [`valid_diatom_code()`]. The function tries to clean diatom codes internally by calling [`DiatoViz::clean_diatom_code()`].}

@@ -5,7 +5,7 @@ build_grobs <- function(i, alpha, colour, data, type = c("diatoms"), ...) {
   make_null <- FALSE
   type <- rlang::arg_match(type)
 
-  diatom_code <- data$diatom_code[i]
+   diatom_code <- data$diatom_code[i]
   image_to_read <- diatom_logo_list[[diatom_code]]  # <- agora acessa direto
 
   if (is.na(diatom_code) || is.null(image_to_read)) {
@@ -68,4 +68,14 @@ build_grobs <- function(i, alpha, colour, data, type = c("diatoms"), ...) {
 
   grid$name <- paste("diatom.grob", i, sep = ".")
   grid
+}
+
+
+reader_function <- function(img){
+  if(is.factor(img)) img <- as.character(img)
+  if(is.raw(img) || tools::file_ext(img) != "svg"){
+    magick::image_read(img)
+  } else if(tools::file_ext(img) == "svg"){
+    magick::image_read_svg(img)
+  }
 }
