@@ -5,8 +5,9 @@ build_grobs <- function(i, alpha, colour, data, type = c("diatoms"), ...) {
   make_null <- FALSE
   type <- rlang::arg_match(type)
 
-   diatom_code <- data$diatom_code[i]
-  image_to_read <- diatom_logo_list[[diatom_code]]  # <- agora acessa direto
+  diatom_code <- data$diatom_code[i]
+  image_to_read <- DiatoViz:::diatom_logo_list[[diatom_code]]
+
 
   if (is.na(diatom_code) || is.null(image_to_read)) {
     cli::cli_alert_warning(

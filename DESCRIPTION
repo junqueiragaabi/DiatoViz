@@ -20,7 +20,7 @@ Imports:
     ggplot2 (>= 3.3.0),
     glue,
     grid,
-    magick,
+    magick (>= 2.7.3),
     lifecycle,
     rlang (>= 0.4.11),
     purrr

@@ -16,6 +16,7 @@ diatom_codes <- tools::file_path_sans_ext(basename(logo_files))
 
 diatom_logo_list <- rlang::set_names(as.list(logo_files), diatom_codes)
 
-usethis::use_data(diatom_logo_list, overwrite = TRUE)
+usethis::use_data(diatom_logo_list, internal = TRUE, overwrite = TRUE)
 
+DiatoViz:::diatom_logo_list
 

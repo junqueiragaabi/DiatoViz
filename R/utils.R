@@ -64,10 +64,3 @@ shape_from_diatom <- function(code){
 
 }
 
-
-get_diatom_logo_list <- function() {
-  # Aqui você pode carregar a lista de logos de um arquivo local ou de um repositório
-  diatom_logo_list <- list()  # Substitua isso pelo seu código de carregamento dos logos
-  return(diatom_logo_list)
-}
-
