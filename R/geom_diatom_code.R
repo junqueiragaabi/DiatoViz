@@ -70,7 +70,14 @@ GeomDIATOM <- ggplot2::ggproto(
 
     data$diatom_code <- clean_diatom_code(as.character(data$diatom_code), keep_non_matches = FALSE)
 
-    grobs <- lapply(seq_along(data$diatom_code), ggpath::build_grobs, alpha = data$alpha, colour = data$colour, data = data)
+    grobs <- lapply(
+      seq_along(data$diatom_code),
+      build_grobs,
+      alpha = data$alpha,
+      colour = data$colour,
+      data = data,
+      type = "diatoms",
+    )
 
     class(grobs) <- "gList"
 

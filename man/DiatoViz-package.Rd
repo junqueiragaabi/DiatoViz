@@ -16,12 +16,20 @@ GeomDIATOM
 
 DiatoViz provides silhouettes of diatoms to be plotted in graphs in R. The use can be made either by the scientific name or by the OMNIDIA code.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://junqueiragaabi.github.io/DiatoViz/}
+}
+
+}
 \author{
 \strong{Maintainer}: Gabriela Junqueira \email{mgjn.junqueira@gmail.com}
 
 Authors:
 \itemize{
   \item Bruno Mioto \email{brunomioto97@gmail.com}
+  \item Carlos E. Wetzel \email{carlos.wetzel@list.lu}
 }
 
 }

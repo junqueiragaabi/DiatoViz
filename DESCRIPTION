@@ -13,13 +13,14 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 Depends:
-    R (>= 3.6)
+    R (>= 4.1.0)
 Imports:
     cli (>= 3.0.0),
-    ggpath (>= 1.0.0),
+    ggpath (>= 1.0.1),
     ggplot2 (>= 3.3.0),
     glue,
     grid,
+    magick,
     lifecycle,
     rlang (>= 0.4.11)
 Suggests:
